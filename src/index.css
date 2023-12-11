@@ -1,0 +1,107 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 500;
+  background: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 41%);
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  height: 40px;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.logo-img {
+  margin-right: 4.5rem;
+  height: 30px;
+}
+
+.nav-right,
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-right {
+  gap: 2rem;
+}
+
+.nav-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+  width: 12rem;
+  height: 26px;
+}
+
+.nav-label-left {
+  width: 8rem;
+}
+
+.nav-label:hover,
+.nav-label:focus {
+  color: hsl(0, 0%, 8%);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.dropdown-name {
+  padding: 5px;
+}
+
+.dropdown-icon {
+  margin-left: 0.5rem;
+  height: 7px;
+}
+
+.nav-option {
+  position: relative;
+}
+
+.dropdown-options {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: 1.8rem;
+  color: hsl(0, 0%, 41%);
+  width: 12rem;
+  height: 4rem;
+}
+
+.btn:hover,
+.btn:focus {
+  color: hsl(0, 0%, 8%);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-register {
+  border: 2px solid hsl(0, 0%, 41%);
+  border-radius: 1.3rem;
+}
+
+.btn-register:hover,
+.btn-register:focus {
+  border: 2px solid hsl(0, 0%, 8%);
+}
