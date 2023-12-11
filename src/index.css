@@ -20,7 +20,7 @@ body {
 }
 
 .logo-img {
-  margin-right: 4.5rem;
+  margin-right: 2rem;
   height: 30px;
 }
 
@@ -34,19 +34,22 @@ body {
 .nav-right {
   gap: 2rem;
 }
+.nav-left {
+  gap: 4rem;
+}
 
 .nav-label {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  margin-right: 2rem;
-  width: 12rem;
+  justify-content: space-between;
+  width: 10rem;
   height: 26px;
 }
 
 .nav-label-left {
   width: 8rem;
+  justify-content: center;
 }
 
 .nav-label:hover,
@@ -63,18 +66,32 @@ body {
 .dropdown-icon {
   margin-left: 0.5rem;
   height: 7px;
+  justify-self: self-end;
 }
 
 .nav-option {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown-options {
   position: absolute;
+  top: calc(100% + 1.5rem);
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: none;
+  background-color: white;
+  padding: 1.3rem 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 30px -10px hsl(0, 0%, 41%);
+  /* display: none; */
+}
+
+.list-item {
+  padding: 0.75rem 0.5rem;
+  white-space: nowrap;
 }
 
 .btn {

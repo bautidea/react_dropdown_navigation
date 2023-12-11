@@ -1,5 +1,5 @@
 import { Option } from './FeaturesDropdown';
-import arrowDown from '../assets/images/icon-arrow-down.svg';
+import arrowUp from '../assets/images/icon-arrow-up.svg';
 
 const options: Option[] = [
   { value: 0, label: 'History' },
@@ -12,11 +12,13 @@ const CompanyDropdown = () => {
     <div className="nav-option">
       <div className="nav-label">
         <span className="dropdown-name">Company</span>
-        <img className="dropdown-icon" src={arrowDown} />
+        <img className="dropdown-icon" src={arrowUp} />
       </div>
       <ul className="dropdown-options">
         {options.map((o) => (
-          <li key={o.value.toString()}>{o.label}</li>
+          <li className="list-item" key={o.value.toString()}>
+            <span>{o.label}</span>
+          </li>
         ))}
       </ul>
     </div>
