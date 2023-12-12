@@ -91,21 +91,7 @@ body {
   display: none;
 }
 
-.company {
-  left: 1rem;
-  width: 8rem;
-}
-
-.company.show {
-  display: block;
-}
-
-.features {
-  width: 12rem;
-  right: 0rem;
-}
-
-.features.show {
+.dropdown-options.show {
   display: block;
 }
 

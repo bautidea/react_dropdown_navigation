@@ -48,7 +48,7 @@ const FeaturesDropdown = ({
         <ReactSVG className="dropdown-icon" src={arrowUp} />
       </div>
       <ul
-        className={`dropdown-options features  ${isVisible ? 'show' : ''}`}
+        className={`dropdown-options ${isVisible ? 'show' : ''}`}
         onMouseOut={(e) => {
           e.preventDefault();
           handleMouseOut();

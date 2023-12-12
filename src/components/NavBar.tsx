@@ -1,35 +1,42 @@
-import CompanyDropdown from './CompanyDropdown';
-import FeaturesDropdown from './FeaturesDropdown';
 import logo from '../assets/images/logo.svg';
+import calendar from '../assets/images/icon-calendar.svg';
+import planning from '../assets/images/icon-planning.svg';
+import reminders from '../assets/images/icon-reminders.svg';
+import todo from '../assets/images/icon-todo.svg';
 import { ReactSVG } from 'react-svg';
-import { useState } from 'react';
+import { Dropdown } from './Dropdown';
+
+const companyOptions = [
+  { value: 0, label: 'History' },
+  { value: 1, label: 'Our Team' },
+  { value: 2, label: 'Blog' },
+];
+const featureOptions = [
+  { value: 0, label: 'Todo List' },
+  { value: 1, label: 'Calendar' },
+  { value: 2, label: 'Reminders' },
+  { value: 3, label: 'Planning' },
+];
+
+const iconsFeatureMapper = {
+  'Todo List': todo,
+  'Calendar': calendar,
+  'Reminders': reminders,
+  'Planning': planning,
+};
 
 const NavBar = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleMouseOver = () => {
-    setIsVisible(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsVisible(false);
-  };
-
   return (
     <>
       <div className="nav-bar">
         <div className="nav-left">
           <ReactSVG className="logo-img" src={logo} />
-          <FeaturesDropdown
-            isVisible={isVisible}
-            handleMouseOver={handleMouseOver}
-            handleMouseOut={handleMouseOut}
+          <Dropdown
+            dropdownName={'features'}
+            options={featureOptions}
+            iconMapper={iconsFeatureMapper}
           />
-          <CompanyDropdown
-            isVisible={isVisible}
-            handleMouseOver={handleMouseOver}
-            handleMouseOut={handleMouseOut}
-          />
+          <Dropdown dropdownName={'company'} options={companyOptions} />
           <span className="nav-label nav-label-left">Careers</span>
           <span className="nav-label nav-label-left">About</span>
         </div>
