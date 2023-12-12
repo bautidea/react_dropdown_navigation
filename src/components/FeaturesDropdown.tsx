@@ -4,33 +4,59 @@ import calendar from '../assets/images/icon-calendar.svg';
 import planning from '../assets/images/icon-planning.svg';
 import reminders from '../assets/images/icon-reminders.svg';
 import todo from '../assets/images/icon-todo.svg';
+import { ReactSVG } from 'react-svg';
 
+export interface DropdownProps {
+  isVisible: boolean;
+  handleMouseOver: () => void;
+  handleMouseOut: () => void;
+}
 export interface Option {
   value: number;
   label: string;
-  icon: string;
 }
 
 const options: Option[] = [
-  { value: 0, label: 'Todo List', icon: todo },
-  { value: 1, label: 'Calendar', icon: calendar },
-  { value: 2, label: 'Reminders', icon: reminders },
-  { value: 3, label: 'Planning', icon: planning },
+  { value: 0, label: 'Todo List' },
+  { value: 1, label: 'Calendar' },
+  { value: 2, label: 'Reminders' },
+  { value: 3, label: 'Planning' },
 ];
 
-const FeaturesDropdown = () => {
+const icons: { [key: string]: string } = {
+  'Todo List': todo,
+  'Calendar': calendar,
+  'Reminders': reminders,
+  'Planning': planning,
+};
+
+const FeaturesDropdown = ({
+  isVisible,
+  handleMouseOver,
+  handleMouseOut,
+}: DropdownProps) => {
   return (
-    <div className="nav-option">
+    <div
+      className="nav-option"
+      onMouseOver={(e) => {
+        e.preventDefault();
+        handleMouseOver();
+      }}
+    >
       <div className="nav-label">
         <span className="dropdown-name">Features</span>
-        <img className="dropdown-icon" src={arrowUp} />
+        <ReactSVG className="dropdown-icon" src={arrowUp} />
       </div>
-      <ul className="dropdown-options">
+      <ul
+        className={`dropdown-options features  ${isVisible ? 'show' : ''}`}
+        onMouseOut={(e) => {
+          e.preventDefault();
+          handleMouseOut();
+        }}
+      >
         {options.map((o) => (
           <li className="list-item" key={o.value.toString()}>
-            <svg className="icon" viewBox="0 0 0 0">
-              <image href={o.icon} />
-            </svg>
+            <ReactSVG src={icons[o.label]} />
             <span>{o.label}</span>
           </li>
         ))}

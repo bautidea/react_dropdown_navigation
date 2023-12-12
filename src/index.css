@@ -59,14 +59,15 @@ body {
   font-weight: 600;
 }
 
-.dropdown-name {
-  padding: 5px;
+.nav-label > .dropdown-icon {
+  transition: transform 0.5s;
+}
+.nav-label:hover > .dropdown-icon {
+  transform: rotate(180deg);
 }
 
-.dropdown-icon {
-  margin-left: 0.5rem;
-  height: 7px;
-  justify-self: self-end;
+.dropdown-name {
+  padding: 5px;
 }
 
 .nav-option {
@@ -86,12 +87,38 @@ body {
   padding: 1.3rem 1.5rem;
   border-radius: 5px;
   box-shadow: 0 0 30px -10px hsl(0, 0%, 41%);
-  /* display: none; */
+  z-index: 1;
+  display: none;
+}
+
+.company {
+  left: 1rem;
+  width: 8rem;
+}
+
+.company.show {
+  display: block;
+}
+
+.features {
+  width: 12rem;
+  right: 0rem;
+}
+
+.features.show {
+  display: block;
 }
 
 .list-item {
   padding: 0.75rem 0.5rem;
   white-space: nowrap;
+  display: flex;
+  gap: 15px;
+}
+
+.list-item:hover {
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .btn {
