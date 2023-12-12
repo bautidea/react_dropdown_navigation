@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import arrowUp from '../assets/images/icon-arrow-up.svg';
 import arrowDown from '../assets/images/icon-arrow-down.svg';
 import { ReactSVG } from 'react-svg';
@@ -16,20 +16,30 @@ interface Props {
 
 export const Dropdown = ({ dropdownName, options, iconMapper }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
+  const dropDownRef = useRef<HTMLDivElement | null>(null);
 
-  const handleMouseEnter = () => {
-    setIsVisible(true);
+  useEffect(() => {
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
+  const handleOutsideClick = (e: MouseEvent) => {
+    if (
+      dropDownRef.current &&
+      !dropDownRef.current.contains(e.target as Node)
+    ) {
+      setIsVisible(false);
+    }
   };
-
-  const handleMouseLeave = () => {
-    setIsVisible(false);
-  };
-
   return (
     <div
       className="nav-option"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onClick={() => setIsVisible(true)}
+      onMouseLeave={() => setIsVisible(false)}
+      ref={dropDownRef}
     >
       <div className="nav-label">
         <span className="dropdown-name">{dropdownName}</span>
@@ -38,7 +48,6 @@ export const Dropdown = ({ dropdownName, options, iconMapper }: Props) => {
           src={isVisible ? arrowDown : arrowUp}
         />
       </div>
-
       <ul className={`dropdown-options ${isVisible ? 'show' : ''}`}>
         {options.map((o) => (
           <li className="list-item" key={o.value.toString()}>

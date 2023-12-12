@@ -42,7 +42,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   width: 10rem;
   height: 26px;
 }
@@ -62,7 +61,7 @@ body {
 .nav-label > .dropdown-icon {
   transition: transform 0.5s;
 }
-.nav-label:hover > .dropdown-icon {
+.nav-label:focus > .dropdown-icon {
   transform: rotate(180deg);
 }
 
@@ -79,10 +78,11 @@ body {
 
 .dropdown-options {
   position: absolute;
-  top: calc(100% + 1.5rem);
+  top: calc(100% + 0rem);
   list-style-type: none;
   padding: 0;
   margin: 0;
+  width: 11rem;
   background-color: white;
   padding: 1.3rem 1.5rem;
   border-radius: 5px;
