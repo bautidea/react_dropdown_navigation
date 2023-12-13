@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import arrowUp from '../assets/images/icon-arrow-up.svg';
-import arrowDown from '../assets/images/icon-arrow-down.svg';
+import arrowUp from '../../assets/images/icon-arrow-up.svg';
+import arrowDown from '../../assets/images/icon-arrow-down.svg';
 import { ReactSVG } from 'react-svg';
+import styles from './NavBar.module.css';
 
 export interface Option {
   value: number;
@@ -36,21 +37,25 @@ export const Dropdown = ({ dropdownName, options, iconMapper }: Props) => {
   };
   return (
     <div
-      className="nav-option"
+      className={styles['nav-option']}
       onClick={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
       ref={dropDownRef}
     >
-      <div className="nav-label">
-        <span className="dropdown-name">{dropdownName}</span>
+      <div className={styles['nav-label']}>
+        <span className={styles['dropdown-name']}>{dropdownName}</span>
         <ReactSVG
-          className="dropdown-icon"
+          className={styles['dropdown-icon']}
           src={isVisible ? arrowDown : arrowUp}
         />
       </div>
-      <ul className={`dropdown-options ${isVisible ? 'show' : ''}`}>
+      <ul
+        className={`${styles['dropdown-options']} ${
+          isVisible ? styles.show : ''
+        }`}
+      >
         {options.map((o) => (
-          <li className="list-item" key={o.value.toString()}>
+          <li className={styles['list-item']} key={o.value.toString()}>
             {iconMapper ? <ReactSVG src={iconMapper[o.label]} /> : ''}
             <span>{o.label}</span>
           </li>
