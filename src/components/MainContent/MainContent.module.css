@@ -1,0 +1,36 @@
+.block {
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding-top: 5rem;
+  margin-top: 0;
+  color: black;
+  font-size: 5rem;
+}
+
+.title-block > p {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.btn {
+  color: white;
+  background: hsl(0, 0%, 8%);
+}
+
+.client-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-block > img {
+  width: 100%;
+}

@@ -39,13 +39,23 @@ const NavBar = () => {
             iconMapper={iconsFeatureMapper}
           />
           <Dropdown dropdownName={'Company'} options={companyOptions} />
-          <span className={styles['nav-label nav-label-left']}>Careers</span>
-          <span className={styles['nav-label nav-label-left']}>About</span>
+          <span
+            className={`${styles['nav-label']} ${styles['nav-label-left']}`}
+          >
+            Careers
+          </span>
+          <span
+            className={`${styles['nav-label']} ${styles['nav-label-left']}`}
+          >
+            About
+          </span>
         </div>
 
         <div className={styles['nav-right']}>
           <button className={styles['btn']}>Login</button>
-          <button className={styles['btn btn-register']}>Register</button>
+          <button className={`${styles['btn']} ${styles['btn-register']}`}>
+            Register
+          </button>
         </div>
       </div>
     </>

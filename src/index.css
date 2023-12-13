@@ -8,3 +8,12 @@ body {
   background: hsl(0, 0%, 98%);
   color: hsl(0, 0%, 41%);
 }
+
+button {
+  font-family: 'Epilogue', sans-serif;
+  outline: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
