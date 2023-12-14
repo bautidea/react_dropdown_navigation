@@ -5,7 +5,7 @@ import databiz from '../../assets/images/client-databiz.svg';
 import marker from '../../assets/images/client-maker.svg';
 import meet from '../../assets/images/client-meet.svg';
 import heroDesktop from '../../assets/images/image-hero-desktop.png';
-import heromobile from '../../assets/images/image-hero-mobile.png';
+import heroMobile from '../../assets/images/image-hero-mobile.png';
 
 const MainContent = () => {
   return (
@@ -31,7 +31,14 @@ const MainContent = () => {
             <ReactSVG src={marker} />
           </div>
         </div>
-        <img className={styles['img']} src={heroDesktop} />
+        <picture className={styles['img-cont']}>
+          <source media="(max-width: 991px)" srcSet={heroMobile} />
+          <source media="(min-width: 992px)" srcSet={heroDesktop} />
+          <img
+            src={heroDesktop}
+            alt="Image of a standing man holding a notebook"
+          />
+        </picture>
       </div>
     </>
   );
