@@ -12,13 +12,17 @@ const MainContent = () => {
     <>
       <div className={styles['block']}>
         <div className={styles['title-block']}>
-          <h1 className={styles['title']}>Make remote work</h1>
-          <p>Get your team in sync, no matter your location.</p>
-          <p>
-            Streamline processes. create team rituals, and watch productivity
-            soar.
-          </p>
-          <button className={styles['btn']}>Learn More</button>
+          <div className={styles['intro-block']}>
+            <h1 className={styles['title']}>Make remote work</h1>
+            <div className={styles['description']}>
+              <p>Get your team in sync, no matter your location.</p>
+              <p>
+                Streamline processes. create team rituals, and watch
+                productivity soar.
+              </p>
+            </div>
+            <button className={styles['btn']}>Learn more</button>
+          </div>
 
           <div className={styles['client-block']}>
             <ReactSVG src={databiz} />
@@ -27,9 +31,7 @@ const MainContent = () => {
             <ReactSVG src={marker} />
           </div>
         </div>
-        <div className={styles['image-block']}>
-          <img src={heroDesktop} />
-        </div>
+        <img className={styles['img']} src={heroDesktop} />
       </div>
     </>
   );
