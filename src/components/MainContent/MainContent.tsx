@@ -1,4 +1,3 @@
-import { ReactSVG } from 'react-svg';
 import styles from './MainContent.module.css';
 import audiophile from '../../assets/images/client-audiophile.svg';
 import databiz from '../../assets/images/client-databiz.svg';

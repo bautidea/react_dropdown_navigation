@@ -107,16 +107,18 @@
     justify-content: baseline;
   }
 
-  .client-block > img {
-    width: 6.5rem !important;
-    height: auto !important;
-  }
-
   .img-cont {
     width: 100%;
   }
 
   .img-cont > img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .client-block > img {
+    width: 6.5rem !important;
+    height: auto !important;
   }
 }
