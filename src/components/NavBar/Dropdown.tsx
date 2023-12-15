@@ -20,6 +20,15 @@ export const Dropdown = ({ dropdownName, options, iconMapper }: Props) => {
   const dropDownRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (
+        dropDownRef.current &&
+        !dropDownRef.current.contains(e.target as Node)
+      ) {
+        setIsVisible(false);
+      }
+    };
+
     document.addEventListener('mousedown', handleOutsideClick);
 
     return () => {
@@ -27,14 +36,6 @@ export const Dropdown = ({ dropdownName, options, iconMapper }: Props) => {
     };
   }, []);
 
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (
-      dropDownRef.current &&
-      !dropDownRef.current.contains(e.target as Node)
-    ) {
-      setIsVisible(false);
-    }
-  };
   return (
     <div
       className={styles['nav-option']}
