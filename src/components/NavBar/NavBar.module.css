@@ -13,6 +13,10 @@
   height: 30px;
 }
 
+.menu-img {
+  z-index: 2;
+}
+
 .menu-img:hover {
   cursor: pointer;
 }
@@ -123,4 +127,16 @@
 .btn-register:hover,
 .btn-register:focus {
   border: 2px solid hsl(0, 0%, 8%);
+}
+
+@media screen and (max-width: 991px) {
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+  }
+  .nav-container {
+    background-color: hsl(0, 0%, 98%);
+    flex-direction: column;
+    z-index: 2;
+  }
 }

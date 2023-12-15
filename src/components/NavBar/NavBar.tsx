@@ -2,43 +2,17 @@ import logo from '../../assets/images/logo.svg';
 import menu from '../../assets/images/icon-menu.svg';
 import closeMenu from '../../assets/images/icon-close-menu.svg';
 import styles from './NavBar.module.css';
-import { useEffect, useState } from 'react';
 import NavBarDisplayOptions from './NavBarDisplayOptions';
-
-// Function to obtain the current Dimension of the window.
-const getCurrentDimension = () => {
-  return {
-    width: window.innerWidth,
-    height: window.innerHeight,
-  };
-};
 
 interface Props {
   showNavOptions: boolean;
   handleMenuClick: () => void;
+  screenSize: { width: number; height: number };
 }
 
-const NavBar = ({ showNavOptions, handleMenuClick }: Props) => {
-  // Initializing state to hold current width and height.
-  const [screenSize, setScreenSize] = useState(getCurrentDimension());
-
-  // Event listener for the resize event, this will be used to display or not
-  // the 'display options' svg.
-  useEffect(() => {
-    // Function to update Dimensions.
-    const updateDimensions = () => {
-      setScreenSize(getCurrentDimension());
-    };
-
-    window.addEventListener('resize', updateDimensions);
-
-    return () => {
-      window.removeEventListener('resize', updateDimensions);
-    };
-  }, [screenSize]);
-
+const NavBar = ({ showNavOptions, handleMenuClick, screenSize }: Props) => {
   return (
-    <div className={styles['nav-bar']}>
+    <nav className={styles['nav-bar']}>
       <img className={styles['logo-img']} src={logo} />
 
       {screenSize.width <= 991 && !showNavOptions && (
@@ -58,7 +32,7 @@ const NavBar = ({ showNavOptions, handleMenuClick }: Props) => {
       )}
 
       {(screenSize.width > 991 || showNavOptions) && <NavBarDisplayOptions />}
-    </div>
+    </nav>
   );
 };
 
