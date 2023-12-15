@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   font-size: 1.5rem;
+  justify-content: space-between;
   height: 40px;
   align-items: center;
   padding: 1.5rem 2rem;
@@ -10,6 +11,10 @@
 .logo-img {
   margin-right: 5rem;
   height: 30px;
+}
+
+.menu-img:hover {
+  cursor: pointer;
 }
 
 .nav-container {
