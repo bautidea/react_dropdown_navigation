@@ -25,10 +25,10 @@ const MainContent = () => {
           </div>
 
           <div className={styles['client-block']}>
-            <ReactSVG src={databiz} />
-            <ReactSVG src={audiophile} />
-            <ReactSVG src={meet} />
-            <ReactSVG src={marker} />
+            <img src={databiz} />
+            <img src={audiophile} />
+            <img src={meet} />
+            <img src={marker} />
           </div>
         </div>
         <picture className={styles['img-cont']}>
