@@ -27,9 +27,7 @@ const NavBar = ({ showNavOptions, handleMenuClick }: Props) => {
   useEffect(() => {
     // Function to update Dimensions.
     const updateDimensions = () => {
-      console.log(`old dimensions ${screenSize.width}`);
       setScreenSize(getCurrentDimension());
-      console.log(`new dimensions ${screenSize.width}`);
     };
 
     window.addEventListener('resize', updateDimensions);

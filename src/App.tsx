@@ -12,13 +12,13 @@ function App() {
   };
 
   return (
-    <>
+    <div className={`${showNavOptions ? 'block-overlay' : ''}`}>
       <NavBar
         showNavOptions={showNavOptions}
         handleMenuClick={handleIconMenuClick}
       />
       <MainContent />
-    </>
+    </div>
   );
 }
 
