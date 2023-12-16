@@ -36,6 +36,7 @@ function App() {
     };
   }, [screenSize]);
 
+  console.log(screenSize);
   const handleIconMenuClick = () => {
     return setShowNavOptions(!showNavOptions);
   };
