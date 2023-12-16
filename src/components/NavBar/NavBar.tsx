@@ -25,7 +25,7 @@ const NavBar = ({ showNavOptions, handleMenuClick, screenSize }: Props) => {
 
       {screenSize.width <= 991 && showNavOptions && (
         <img
-          className={styles['menu-img']}
+          className={`${styles['menu-img']} ${styles['cancel']}`}
           src={closeMenu}
           onClick={() => handleMenuClick()}
         />
